@@ -151,11 +151,11 @@ $(document).on("mouseleave", ".fufilewrapper", function() {
     function adduploadgrid(fileurl,pcounter,filetype,fname){
       var footerid = "file-infof"+pcounter;
       if(filetype === 'png' || filetype === 'jpg' || filetype === 'jpeg'){
-        var newfile = "<div class='list-item "+pcounter+"' id=f"+pcounter+" onclick='t(this.id)'>"
-      +"<a href='#!' class='file'>"
+        var newfile = "<div class='list-item' id=f"+pcounter+" onclick='t(this.id)'>"
+      +"<a href='#!' class='file' >"
       +"<div class='list-content file-content file-content' id='fcontent-"+pcounter+"' onclick='t(event,this.id)'>"
       +"<img id='img' class='img-"+pcounter+"' src='"+ fileurl +"'></img>"
-      +"<div class='list-footer' id='"+pcounter+"'>"
+      +"<div class='list-footer' id='"+footerid+"'>"
       +"<div class='list-icon-wrapper'>"
       +"<div class='file-icon-circle'>"
       +"<i id='file-icon' class='far fa-hdd file-icon'></i>"
@@ -171,25 +171,24 @@ $(document).on("mouseleave", ".fufilewrapper", function() {
       $(newfile).appendTo(".flexbox");
       }
       else{
-    
          var newfile = 
-        "<div class='list-item "+pcounter+"' id="+pcounter+" onclick='t(this.id)'>"
-      +"<a href='#!' class='file'>"
-      +"<div class='list-content file-content file-content' id='"+pcounter+"' onclick='t(event,this.id)'>"
+      "<div class='list-item "+pcounter+"' id="+pcounter+" onclick='t(this.id)'>"
+      +"<a href='#!' class='file' ><div class='list-content file-content file-content' id='"+pcounter+"' onclick='t(event,this.id)'>"
       +"<img id='img' class='"+pcounter+"' src=''></img>"
-      +"<div class='list-footer' id='"+pcounter+"'>"
+      +"<div class='list-footer' id='"+footerid+"'>"
       +"<div class='list-icon-wrapper'>"
       +"<div class='file-icon-circle'>"
       +"<i id='file-icon' class='far fa-hdd file-icon'></i>"
+      +"</div>"
       +"</div>"
       +"<div class='list-footer-name'>"
       +"<span>"
       +fname
       +"</span>"
       +"</div>"
-
       +"</div>"
       + "</div></a></div>";
+         
        $(newfile).appendTo(".flexbox");
        var baseURL = "{% static 'images/question-icon.png' %}";
        var imgclass = '.' + pcounter;
